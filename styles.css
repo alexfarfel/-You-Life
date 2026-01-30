@@ -76,9 +76,10 @@ body {
 
 /* App Container */
 .app-container {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     position: relative;
+    width: 100%;
 }
 
 /* Header Styles */
@@ -400,9 +401,13 @@ body {
     margin-bottom: var(--spacing-xl);
 }
 
-@media (min-width: 700px) {
+@media (min-width: 800px) {
     .tasks-container {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .app-container {
+        max-width: 700px;
     }
 }
 
@@ -432,7 +437,7 @@ body {
 .task-item {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
     background: var(--bg-task);
@@ -442,6 +447,7 @@ body {
     position: relative;
     overflow: hidden;
     transform: translateX(0);
+    min-width: 0;
 }
 
 .task-item::before {
@@ -545,11 +551,11 @@ body {
 }
 
 .task-name {
-    flex: 1;
+    flex: 1 1 150px;
     font-size: 0.875rem;
     font-weight: 500;
     color: var(--text-primary);
-    min-width: 0;
+    min-width: 150px;
     word-wrap: break-word;
     word-break: normal;
     overflow-wrap: break-word;
