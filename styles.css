@@ -395,14 +395,14 @@ body {
 /* Tasks Container */
 .tasks-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-lg);
     margin-bottom: var(--spacing-xl);
 }
 
-@media (max-width: 600px) {
+@media (min-width: 700px) {
     .tasks-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -432,6 +432,7 @@ body {
 .task-item {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     padding: var(--spacing-md);
     background: var(--bg-task);
@@ -550,6 +551,10 @@ body {
     color: var(--text-primary);
     min-width: 0;
     word-wrap: break-word;
+    word-break: normal;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.4;
     transition: all var(--transition-fast);
 }
 
